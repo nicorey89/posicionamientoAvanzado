@@ -48,18 +48,21 @@ li {
 }
 div.busqueda {
   padding: 15px 0;
+  flex-grow: 0.5;
 }
 .main-header {
   background-color: var(--amarillo);
   padding: 20px;
 }
-.main-header-top-bar{
-  display: flex;
-  flex-direction: column;
+.main-header-top-bar-busqueda{
+display: flex;
+flex-wrap: wrap;
+}
+.main-header-top-bar a{
+  flex-grow: 0.5;
 }
 .logo {
-  width: 200px;
-
+  width: 150px;
 }
 .copy-header {
   font-size: 0.75rem;
@@ -103,31 +106,47 @@ section div.product-container article.product {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
     margin-right: 5px;
     margin-bottom: 10px;
     max-width: 400px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100); 
 }
 section div.product-container article.product div.description-product {
+  position: relative;
   width: 100%;
-  height: 120px;
   border-top: 1px solid #ebebeb;
-  padding:15px;
+  padding: 15px 15px 5px 15px;
 }
 div.description-product i{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
+  display: block;
+  font-size: 1rem;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
   border: 1px solid var(--Verde);
-  color: var(--Verde)
-}
-div.description-product #descuento{
   color: var(--Verde);
-  padding-bottom: 1rem;
+  background-color: #FFF;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  top: -15px;
+}
+#precio{
+  font-size: var(--precio);
+  flex-grow: 0.30;
+}
+
+#descuento{
+  color: var(--Verde);
+  flex-grow: 0.7;
+}
+.descripcion{
+  color: var(--Gris-oscuro);
+  font-size: var(--descripcion);
+}
+div.precio{
+  display: flex;
 }
 
 section div.product-container article.product div.product-img {
@@ -163,10 +182,9 @@ footer span {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
-  }
+  } 
   .copy-header{
-    font-size: 2rem;
+    font-size: 1.5rem;
     max-width: 350px;
     text-align: right;
   }
@@ -182,6 +200,10 @@ footer span {
   }
   .main-nav-bar li {
     margin: 0 5px;
+  }
+  section div.product-container {
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
   
 }
